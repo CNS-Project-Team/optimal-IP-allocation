@@ -1,0 +1,17 @@
+button {
+    width: 7rem;
+    border: 0.18rem solid transparent;
+    border-radius: 10px;
+    padding: 0.25rem;
+    background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgb(169, 17, 230), rgb(231, 24, 203));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    font-weight: 600;
+}
+
+form{
+    height: 60vh;
+    overflow-y: auto;
+    overflow-x:hidden ;
+}

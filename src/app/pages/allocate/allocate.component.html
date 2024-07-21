@@ -12,10 +12,10 @@
         <form [formGroup]="ipBaseObject">
             <div class="row mt-5 ">
                 <div class="col-md-12 d-flex">
-                    <div class="col-md-6">
-                        <label class="form-label">Department Name</label>
+                    <div class="col-md-3">
+                        <label class="form-label fs-5">Department Name</label>
                     </div>
-                    <div class="ms-5 col-md-6">
+                    <div class="ms-5 col-md-3 fs-5">
                         <label class="form-label">No of users</label>
                     </div>
                 </div>
@@ -25,8 +25,10 @@
                     <div *ngFor="let ipCount of ipCounts.controls; let i = index">
                         <app-user-input [ipCount]="ipCount"></app-user-input>
                     </div>
-                    <button (click)="addNewLine()">ADD NEW</button>
-                    <button (click)="save()">SAVE</button>
+                    <div class="mt-3 ">
+                        <button   (click)="addNewLine()">ADD NEW</button>
+                        <button class=" ms-2" (click)="save()">SAVE</button>
+                    </div>
                  </div>
                 </div>
             </div>
