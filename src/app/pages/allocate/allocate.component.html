@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 fs-4">
+            In this calculator, ypu can input the departments related to your company an optimal<span class="text-success"> IP allocation</span>
+            plan for your company. 
+        </div>
+        <!-- <div class="col-md-6 d-flex mt-5">
+            <label class="form-label">No of Department of the company</label>
+            <input (keyup.enter)="numberOfFieldLoop()" [formControl]="fieldCount" max="100"
+            class="form-control" type="number">
+        </div> -->
+        <form [formGroup]="ipBaseObject">
+            <div class="row mt-5 ">
+                <div class="col-md-12 d-flex">
+                    <div class="col-md-6">
+                        <label class="form-label">Department Name</label>
+                    </div>
+                    <div class="ms-5 col-md-6">
+                        <label class="form-label">No of users</label>
+                    </div>
+                </div>
+                {{ipBaseObject.value | json}}
+                <div class=" scrollspy-example-2 col-md-8 mb-4"  data-bs-spy="scroll"  data-bs-smooth-scroll="true" tabindex="0">
+                 <div formArraryName="ipCounts">
+                    <div *ngFor="let ipCount of ipCounts.controls; let i = index">
+                        <app-user-input [ipCount]="ipCount"></app-user-input>
+                    </div>
+                    <button (click)="addNewLine()">ADD NEW</button>
+                    <button (click)="save()">SAVE</button>
+                 </div>
+                </div>
+            </div>
+        </form> 
+    </div>
+</div>
