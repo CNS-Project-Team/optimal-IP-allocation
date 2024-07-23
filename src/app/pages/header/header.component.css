@@ -1,3 +1,20 @@
+.nav-link{
+    display: inline-block;
+    position: relative;
+}
+
 .shadow-card {
     box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 7px
+}
+
+.rule-posi{
+    position: absolute;
+    top: 0x;
+}
+
+.rule-apperance{
+    background-color: #ffffff;
+    border-radius: 8px;
+    height: 4px;
+    width: 100%;
 }
