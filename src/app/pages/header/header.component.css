@@ -1,3 +1,13 @@
-.shadow-card {
-    box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 7px
+.shadow-card::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Adjust position as needed */
+    left: -10px; /* Adjust position as needed */
+    right: -10px; /* Adjust position as needed */
+    bottom: -10px; /* Adjust position as needed */
+    background: linear-gradient(to right, rgb(169, 17, 230), rgb(231, 24, 203));
+    z-index: -1;
+    border-radius: 10px; /* Match or adjust to .shadow-card border-radius */
+    filter: blur(10px); /* Adjust blur to create a shadow effect */
+    opacity: 0.3; /* Adjust opacity as needed */
 }

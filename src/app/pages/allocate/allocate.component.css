@@ -10,8 +10,20 @@ button {
     font-weight: 600;
 }
 
-form{
+/* form{
+    width: 60vw;
     height: 60vh;
+    border-radius: 10px;
     overflow-y: auto;
     overflow-x:hidden ;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgb(169, 17, 230), rgb(231, 24, 203));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+} */
+
+.form-select{
+    width: 10rem;
 }

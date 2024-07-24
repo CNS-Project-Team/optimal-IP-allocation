@@ -1,16 +1,12 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 fs-4">
-            In this calculator, ypu can input the departments related to your company an optimal<span class="text-success"> IP allocation</span>
+<div class="container" style="margin-top: 100px;">
+    <div class="row" style="margin-top: 80px;">
+        <div class="col-md-12 fs-4 mb-4 ">
+            In this calculator, ypu can input the departments related to your company an optimal<span class="text-success fw-bold"> IP allocation</span>
             plan for your company. 
         </div>
-        <!-- <div class="col-md-6 d-flex mt-5">
-            <label class="form-label">No of Department of the company</label>
-            <input (keyup.enter)="numberOfFieldLoop()" [formControl]="fieldCount" max="100"
-            class="form-control" type="number">
-        </div> -->
-        <form [formGroup]="ipBaseObject">
-            <div class="row mt-5 ">
+
+        <form [formGroup]="ipBaseObject" class="border-opacity-25">
+            <div class="row mt-5 bor">
                 <div class="col-md-12 d-flex">
                     <div class="col-md-3">
                         <label class="form-label fs-5">Department Name</label>
@@ -19,8 +15,7 @@
                         <label class="form-label">No of users</label>
                     </div>
                 </div>
-                {{ipBaseObject.value | json}}
-                <div class=" scrollspy-example-2 col-md-8 mb-4"  data-bs-spy="scroll"  data-bs-smooth-scroll="true" tabindex="0">
+                <div class=" scrollspy-example-2 col-md-6 mb-4"  data-bs-spy="scroll"  data-bs-smooth-scroll="true" tabindex="0">
                  <div formArraryName="ipCounts">
                     <div *ngFor="let ipCount of ipCounts.controls; let i = index">
                         <app-user-input [ipCount]="ipCount"></app-user-input>
@@ -28,10 +23,59 @@
                     <div class="mt-3 ">
                         <button   (click)="addNewLine()">ADD NEW</button>
                         <button class=" ms-2" (click)="save()">SAVE</button>
+                        <button class=" ms-2" (click)="generateClassType()">SUBMIT</button>
                     </div>
                  </div>
                 </div>
             </div>
-        </form> 
+        </form>
+
+        <div class="row  mt-5 mb-3">
+            {{classTypeMessage}}
+        </div>
+
+        <div class=" row mt-3 mb-3"> 
+            <div class="col-md-6">
+                <!-- <label class="form-label fs-5" for="ipaddress">Select one suitable network ip</label> -->
+                <input class="ms-2 col-md-2 form-control" [(ngModel)]="userInputIpaddress" type="text" placeholder="Select one suitable network ip"> 
+                <button class="mt-2 justify-content-end"  (click)="checkUserInputIp() ">CHECK IP</button>
+            </div>
+
+            <div>
+                {{ipCheckMsg}}
+                {{subnetMask}}
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-2 mb-4">
+            <div class="  col-lg-10   border border-light-subtle  mt-3  rounded shadow-card">
+                <h1>IP Table</h1>
+                <div class="table-responsive">
+                    <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Department</th>
+                    <th scope="col">No of users</th>
+                    <th scope="col">Block size</th>
+                    <th scope="col">Network address</th> 
+                    <th scope="col">First usable IP</th> 
+                    <th scope="col">Last usable IP</th> 
+                    <th scope="col">Broadcast address</th> 
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let entry of tableData">
+                    <td>{{ entry.department }}</td>
+                    <td>{{ entry.userCount }}</td>
+                    <td>{{ entry.blockSize }}</td>
+                    <td>{{ entry.networkAddress }}</td>
+                    <td>{{ entry.firstUsableIp }}</td>
+                    <td>{{ entry.lastUsableIp }}</td>
+                    <td>{{ entry.broadcastAddress }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
     </div>
 </div>

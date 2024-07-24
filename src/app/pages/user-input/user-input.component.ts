@@ -15,7 +15,7 @@ export class UserInputComponent {
   ipCountNew = new FormGroup({
     id: new FormControl(''),
     name: new FormControl(''),
-    userCount: new FormControl(''),
+    userCount: new FormControl(0),
   });
   
 
