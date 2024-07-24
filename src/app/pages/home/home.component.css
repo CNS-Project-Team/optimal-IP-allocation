@@ -1,6 +1,7 @@
 .main-title{
     text-align: center;
     margin-bottom: 30px;
+    margin-left: 12rem;
 }
 
 .title-color{
@@ -9,4 +10,8 @@
 
 .m-l-20{
     margin-left: 20px;
+}
+
+.m-large{
+    margin-left: 150px;
 }
