@@ -1,0 +1,22 @@
+footer{
+    width: 98.75vw;
+    padding: 0;
+    margin: 0;
+}
+
+.copy-rights{
+    width: 98.75vw;
+    height: 57px;
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+}
+
+.copy-rights>p{
+    color: aliceblue;
+}
+
+.email{
+    position: absolute;
+    right: 15px;
+}
